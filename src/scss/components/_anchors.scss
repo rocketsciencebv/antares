@@ -1,0 +1,38 @@
+a,
+.anchor {
+  color: $primary;
+  font-weight: 100 !important;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: $black;
+  }
+
+  &--default {
+    color: $primary;
+
+    &:hover {
+      color: $black;
+    }
+
+    // &:visited,
+    // &:active,
+    // &:focus {
+    //   color: $primary;
+    // }
+  }
+
+  &--black {
+    color: $black;
+
+    &:hover {
+      color: lighten($primary, 80);
+    }
+
+    // &:visited,
+    // &:active,
+    // &:focus {
+    //   color: $black;
+    // }
+  }
+}

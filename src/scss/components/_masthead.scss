@@ -1,0 +1,53 @@
+@import '../variables';
+
+.masthead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background: linear-gradient(to bottom, #{fade-out($primary, .7)} 0%, #{fade-out($primary, .3)} 75%, $primary 100%),
+  url('../../img/antares-rocket.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+
+  h1 {
+    color: $gray-100;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.5rem;
+  }
+
+  h2 {
+    color: $gray-200;
+    max-width: 20rem;
+    font-size: 1rem;
+    margin: 2rem auto 3rem auto;
+  }
+
+  @media (max-width: $br-sm) {
+    h1 {
+      color: $gray-100;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      letter-spacing: 0.5rem;
+    }
+  }
+
+  @media (min-width: $br-lg) {
+    height: 100vh;
+    padding: 0;
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 6.5rem;
+    }
+
+    h2 {
+      max-width: 30rem;
+      font-size: 1.25rem;
+    }
+  }
+}

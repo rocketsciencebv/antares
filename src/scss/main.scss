@@ -1,0 +1,35 @@
+@import './variables';
+@import './mixins/mixins';
+@import './components/components';
+
+body {
+  font-family: "Nunito";
+  letter-spacing: 0.0625em;
+  font-size: $base-size;
+
+  @media (max-width: 599px) {
+    font-size: 14px;
+  }
+}
+
+a {
+  color: $primary;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: darken($primary, 20%);
+  }
+}
+
+.bg-black {
+  background-color: $black !important;
+}
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}

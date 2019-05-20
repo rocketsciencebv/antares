@@ -1,0 +1,231 @@
+@import '../mixins/calculations';
+
+.section {
+  position: relative;
+  padding: 5rem 0;
+
+  &--gray {
+    background-color: $gray-100;
+
+    .section__content__column {
+      text-align: center;
+    }
+  }
+
+  &--about {
+    padding-top: 0;
+
+    .section__content__column {
+      color: $gray-900;
+      text-align: center;
+    }
+  }
+
+  &--green {
+    background-color: $primary;
+    padding-bottom: 0;
+
+    .section__content {
+      margin-top: 0;
+
+      &__column h4 {
+        color: $white;
+      }
+    }
+
+    .list-group .list-group-item {
+      margin-top: .5rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &--image {
+    background: linear-gradient(to bottom, #{fade-out($black, .9)} 0%, #{fade-out($black, .5)} 75%, $black 100%),
+    url('../../img/space.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    text-align: center;
+
+    .section__header {
+      color: $white;
+      margin: 0 auto;
+      max-width: 500px;
+    }
+
+    .section__content {
+      background-color: $white;
+      max-width: 740px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+
+    .form-inline {
+      input {
+        box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, .1) !important;
+        padding: 1.25rem 2rem;
+        height: auto;
+        font-size: 80%;
+        text-transform: uppercase;
+        letter-spacing: 0.15rem;
+        border: 0;
+      }
+    }
+  }
+}
+
+/**
+ * SECTION HEADERS
+ */
+.section__header {
+  text-align: center;
+
+  h3 {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+}
+
+.section__header--rounded {
+  position: relative;
+  height: 500px;
+
+  h3 {
+    color: #333;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  &:after {
+    background-color: $white;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 100px;
+    transform: translate(-50%);
+    border-top-left-radius: 50% 20%;
+    border-top-right-radius: 50% 20%;
+  }
+}
+
+.section__header--about {
+  background: linear-gradient(to bottom, #{fade-out($primary, .7)} 0%, #{fade-out($primary, .3)} 75%, $primary 100%),
+  url('../../img/rocket-development.jpg') no-repeat 50%;
+  background-size: cover;
+
+  .image-credits {
+    color: $white;
+    bottom: 100px;
+
+    a {
+      color: $black;
+    }
+  }
+}
+
+/**
+ * SECTION CONTENT
+ */
+.section__content {
+  font-size: toRem(18px);
+  margin-top: 3.5rem;
+
+  &__column {
+    text-align: left;
+    margin-bottom: 3rem;
+
+    img {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-size: toRem(18px);
+      font-weight: bolder;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $gray-600;
+      font-size: toRem(16px);
+    }
+  }
+}
+
+.contact-wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+
+  &__image {
+    position: relative;
+    flex: 1 1 40%;
+
+    img {
+      position: absolute;
+      bottom: 4.5rem;
+      right: 35%;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+
+    h4 {
+      margin-bottom: 1rem;
+    }
+
+    &__inner {
+      display: flex;
+      flex-flow: row nowrap;
+
+      &:last-child {
+        margin-top: 1.5rem;
+      }
+    }
+
+    .list-group {
+      &--phone {
+        flex: 1 1 auto;
+      }
+
+      &--whatsapp {
+        flex: 1 1 auto;
+        margin-left: 1rem;
+      }
+
+      .fa-whatsapp {
+        color: #25d366;
+      }
+    }
+  }
+
+  @media (max-width: $br-md) {
+    &__image {
+      display: none;
+    }
+  }
+
+  @media (max-width: $br-sm) {
+    &__content__inner {
+      flex-direction: column;
+
+      .list-group--phone {
+        margin-bottom: 1.5rem;
+      }
+
+      .list-group--whatsapp {
+        margin-left: 0;
+      }
+    }
+  }
+}

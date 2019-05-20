@@ -1,0 +1,141 @@
+@import '../variables';
+@import '../mixins/calculations';
+
+#mainNav {
+  min-height: 56px;
+  background-color: $white;
+
+  &.navbar-shrink {
+    box-shadow: 0 toRem(10px) toRem(14px) toRem(-6px) rgba(0, 0, 0, .28);
+  }
+
+  .navbar-toggler {
+    align-items: center;
+    border: none;
+    color: $primary;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 0.75rem;
+
+    .icon-cross {
+      display: none;
+    }
+
+    .btn__icon {
+      font-size: toRem(24px);
+    }
+
+    .btn__label {
+      font-size: toRem(16px);
+      margin-left: .5rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .navbar-brand {
+    color: $black;
+    font-weight: 700;
+    padding: .9rem 0;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      font-size: toRem(18px);
+
+      &:hover {
+        color: fade(white, 80%);
+        outline: none;
+        background-color: transparent;
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .nav-link {
+    transition: color .5s ease-in-out;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .navbar-toggler {
+      display: flex;
+    }
+
+    .nav-link {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: $br-md) {
+    .navbar-brand {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: $br-lg) {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+
+    .navbar-brand {
+      color: $white;
+      margin-right: 0;
+      padding: .5rem 0;
+    }
+
+    .nav-link {
+      color: $white;
+      padding: 2rem 1.5rem;
+      transition: none;
+
+      &:hover {
+        color: fade-out($white, .25);
+      }
+
+      &:active {
+        color: white;
+      }
+    }
+
+    &.navbar-shrink {
+      background-color: $white;
+
+      .navbar-brand {
+        color: $black;
+      }
+
+      .nav-link {
+        color: $black;
+        padding: 1.5rem 1.5rem 1.25rem;
+        border-bottom: 0.25rem solid transparent;
+
+        &:hover {
+          color: $primary;
+        }
+
+        &:active {
+          color: darken($primary, 15%);
+        }
+
+        &.active {
+          color: $primary;
+          outline: none;
+          border-bottom: 0.25rem solid $primary;
+        }
+      }
+    }
+  }
+}

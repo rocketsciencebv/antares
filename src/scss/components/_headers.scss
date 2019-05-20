@@ -1,0 +1,13 @@
+.header {
+  margin: 0;
+
+  &--lined:after {
+    background-color: $primary;
+    border-width: .25rem;
+    content: '';
+    display: block;
+    height: toRem(4px);
+    margin: 1rem auto 0 auto;
+    width: 3rem;
+  }
+}
