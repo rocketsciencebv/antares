@@ -2,7 +2,7 @@
 
 Antares is a static one page template build with jQuery, Bootstrap, Sass and Webpack.
 
-(Demo)[https://rs-antares.herokuapp.com/]
+[View a demo](https://rs-antares.herokuapp.com/)
 
 ## Installation
 
