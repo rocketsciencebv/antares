@@ -1,6 +1,6 @@
 # Antares
 
-Antares is a static one page template build with jQuery, Bootstrap, Sass and Webpack.
+Derived from our [Archytas](https://github.com/rocketsciencebv/archytas) starter template, Antares is a static one page template build with jQuery, Bootstrap, Sass and Webpack.
 
 [View a demo](https://rs-antares.herokuapp.com/)
 
