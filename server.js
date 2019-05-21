@@ -13,6 +13,10 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/dist'));
 });
 
+// app.get('/.well-known/acme-challenge/:content', function(req, res) {
+//   res.send('xxxxxxx');
+// });
+
 app.redirect('*', '/', 301);
 
 app.listen(port);
